@@ -14,6 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/contoh', function (){
+   echo 'jalan di api.php';
+});
+Route::post('/contoh', function (){
+    echo 'jalan di api.php';
+});
+Route::patch('/contoh', function (){
+    echo 'jalan di api.php';
+});
+Route::delete('/contoh', function (){
+    echo 'jalan di api.php';
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
