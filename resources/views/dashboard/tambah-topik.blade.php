@@ -26,5 +26,5 @@
 
 
         <input type="submit" value="Submit">
-    </form>
+    </form> 
 @endsection
