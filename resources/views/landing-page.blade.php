@@ -15,7 +15,5 @@
     <a href="{{route('daftar')}}" type="button" class="button-daftar">Daftar</a>
 </div>
 
-<x-button-component name="testing" default=""></x-button-component>
-
 </body>
 </html>

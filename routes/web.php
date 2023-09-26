@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TopicController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormulirController;
+
+Route::get('/form', [FormulirController::class, 'index'])->name('formulir.index');
+Route::get('/form/create', [FormulirController::class, 'create'])->name('formulir.create');
+Route::post('/form', [FormulirController::class, 'store'])->name('formulir.store');
 
 /*
 |--------------------------------------------------------------------------
@@ -15,48 +18,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing-page');
-})->name('landing-page');
-
-Route::get('/masuk', function() {
-    return 'halaman masuk';
-})->name('masuk');
-
-Route::get('/daftar', function() {
-    return 'halaman daftar';
-})->name('daftar');
+Route::redirect('/', '/dashboard');
 
 Route::get('/dashboard', function() {
-    $nama = 'freder';
-    return view('dashboard.beranda', compact('nama'))
-        ->with('page', 'beranda');
+    return view('dashboard.dashboard')
+        ->with('page', 'dashboard');
 })->name('dashboard');
 
-Route::get('/dashboard/tugas-akhir', function() {
-    return view('dashboard.tugas-akhir', [
-        'nama' => 'Luthfiyyah',
-        'page' => 'tugas-akhir'
-    ]);
-})->name('tugas-akhir');
+Route::get('/form', function() {
+    return view('dashboard.form')
+        ->with('page', 'form');;
+})->name('form');
 
-Route::get('/dashboard/penawaran-topik', [TopicController::class, 'show'])->name('penawaran-topik');
-Route::get('/dashboard/penawaran-topik/tambah', [TopicController::class, 'showForm'])->name('tambah-penawaran-topik');
-Route::middleware(['special'])->
-put('/dashboard/penawaran-topik/tambah', [TopicController::class, 'simpan'])->name('tambah-penawaran-topik');
-
-Route::prefix('contoh')->name('contoh.')->group(function () {
-    Route::get('', function () {
-        return redirect()->route('bukan_contoh.anak2');
-    });
-    Route::get('dengan_parameter/{id}', [\App\Http\Controllers\ContohController::class, 'url1parameter']);
-    Route::get('dengan_parameter/{id}/{sub}', [\App\Http\Controllers\ContohController::class, 'url2parameter']);
-    Route::middleware('web')->get('/anak', function () {
-        echo 'ini anak';
-    })->name('anak');
-    Route::get('/anak2', function () {
-        echo 'ini anak 2';
-    })->name('anak2');
-});
-
-Route::resource('photos', \App\Http\Controllers\PhotoController::class);
+Route::get('/response', function() {
+    return view ('dashboard.response')
+        ->with('page', 'response');;
+})->name('response');
