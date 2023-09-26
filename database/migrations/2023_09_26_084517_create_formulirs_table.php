@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('formulirs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->string('brand');
             $table->float('size', 5, 2); 
             $table->string('region');
-            $table->string('avatar');
+            $table->string('picture');
             $table->timestamps();
         });
     }

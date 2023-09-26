@@ -15,6 +15,6 @@ class Formulir extends Model
             'brand',
             'size',
             'region',
-            'avatar',
+            'picture',
         ];
 }

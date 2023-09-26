@@ -25,7 +25,7 @@
                 <td>{{ $formulir->size }}</td>
                 <td>{{ $formulir->region }}</td>
                 <td>
-                    <img src="{{ asset('storage/' . $formulir->avatar) }}" alt="{{ $formulir->name }}" width="100">
+                    <img src="{{ asset('storage/' . $formulir->picture) }}" alt="{{ $formulir->name }}" width="100">
                 </td>
             </tr>
         @endforeach
