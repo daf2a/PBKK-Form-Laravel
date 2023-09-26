@@ -3,17 +3,17 @@
 
 @section('content')
 
-    <h2 class="text-4xl mt-6 mb-3 font-extrabold text-gray-700 dark:text-white">Responses</h2>
+    <h2 class="text-4xl mt-3 mb-3 font-extrabold text-gray-700 dark:text-white">Responses</h2>
     
     <table class="table">
         <thead>
         <tr>
             <th>No.</th>
             <th>Name</th>
-            <th>Email</th>
+            <th>Brand</th>
             <th>Shoe Size</th>
             <th>Region</th>
-            <th>Avatar</th>
+            <th>Picture</th>
         </tr>
         </thead>
         <tbody>
@@ -21,7 +21,7 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $formulir->name }}</td>
-                <td>{{ $formulir->email }}</td>
+                <td>{{ $formulir->brand }}</td>
                 <td>{{ $formulir->size }}</td>
                 <td>{{ $formulir->region }}</td>
                 <td>

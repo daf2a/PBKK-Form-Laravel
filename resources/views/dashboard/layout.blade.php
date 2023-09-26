@@ -1,9 +1,10 @@
 {{-- parent --}}
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://laravel.com/img/favicon/favicon.ico" type="image/x-icon">
     <title>Form Laravel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -17,7 +18,7 @@
             @include('components.dashboard.sidebar')
         </div>
         <!-- Konten Utama -->
-        <div class="col-md-10 col-content">
+        <div class="col-md-10 mt-4 mr-2 col-content">
            @if(Session::get('status') != null)
                 <div class="alert alert-success">{{ \Illuminate\Support\Facades\Session::get('status') }}</div>
             @endisset

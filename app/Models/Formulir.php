@@ -12,7 +12,7 @@ class Formulir extends Model
     protected $fillable =
         [
             'name',
-            'email',
+            'brand',
             'size',
             'region',
             'avatar',

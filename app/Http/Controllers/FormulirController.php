@@ -13,7 +13,7 @@ class FormulirController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
+            'brand' => 'required|string|max:255',
             'size' => 'required|numeric|between:2.50,99.99',
             'region' => 'required|string|max:255',
             'avatar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
@@ -21,7 +21,7 @@ class FormulirController extends Controller
 
         $formulir = new Formulir();
         $formulir->name = $request->input('name');
-        $formulir->email = $request->input('email');
+        $formulir->brand = $request->input('brand');
         $formulir->size = $request->input('size');
         $formulir->region = $request->input('region');
 
@@ -32,7 +32,7 @@ class FormulirController extends Controller
 
         $formulir->save();
 
-        return redirect()->route('dashboard.response')->with('success', 'Formulir berhasil disimpan.');
+        return redirect()->route('dashboard.response')->with('status', 'Data berhasil ditambahkan!');
     }
 
     public function create()
