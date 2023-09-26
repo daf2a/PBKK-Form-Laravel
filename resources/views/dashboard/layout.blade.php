@@ -13,11 +13,11 @@
 @include('components.dashboard.navbar')
 <div class="container-fluid mt-5 p-3">
     <div class="row">
-        <div class="col-md-3 col-sidebar">
+        <div class="col-md-2 col-sidebar">
             @include('components.dashboard.sidebar')
         </div>
         <!-- Konten Utama -->
-        <div class="col-md-9 col-content">
+        <div class="col-md-10 col-content">
            @if(Session::get('status') != null)
                 <div class="alert alert-success">{{ \Illuminate\Support\Facades\Session::get('status') }}</div>
             @endisset
