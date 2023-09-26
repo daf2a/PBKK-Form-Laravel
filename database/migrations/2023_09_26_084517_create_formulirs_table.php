@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->float('size', 5, 2); 
             $table->string('region');
-            $table->string('avatar');
+            $table->string('picture');
             $table->timestamps();
         });
     }

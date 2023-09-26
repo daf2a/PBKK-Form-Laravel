@@ -16,7 +16,7 @@ class FormulirController extends Controller
             'brand' => 'required|string|max:255',
             'size' => 'required|numeric|between:2.50,99.99',
             'region' => 'required|string|max:255',
-            'avatar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'picture' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         $formulir = new Formulir();
@@ -25,9 +25,9 @@ class FormulirController extends Controller
         $formulir->size = $request->input('size');
         $formulir->region = $request->input('region');
 
-        if ($request->hasFile('avatar')) {
-            $avatarPath = $request->file('avatar')->store('public/avatars');
-            $formulir->avatar = str_replace('public/', '', $avatarPath);
+        if ($request->hasFile('picture')) {
+            $picturePath = $request->file('picture')->store('public/pictures');
+            $formulir->picture = str_replace('public/', '', $picturePath);
         }
 
         $formulir->save();
