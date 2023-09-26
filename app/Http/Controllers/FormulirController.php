@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Formulir;
+use Illuminate\Contracts\View\View;
 
 class FormulirController extends Controller
 {
@@ -31,11 +32,24 @@ class FormulirController extends Controller
 
         $formulir->save();
 
-        return redirect()->route('formulir.index')->with('success', 'Formulir berhasil disimpan.');
+        return redirect()->route('dashboard.response')->with('success', 'Formulir berhasil disimpan.');
     }
 
     public function create()
     {
-        return view('formulir');
+        return view('dashboard.formulir', [
+            'page' => 'formulir'
+        ]
+    );
+    }
+
+    public function show() : View
+    {
+        $formulirs = Formulir::all();
+
+        return view('dashboard.response', [
+            'formulirs' => $formulirs,
+            'page' => 'dashboard.response'
+        ]);
     }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->float('size', 5, 2); // Ukuran sepatu, dengan maksimal 2 angka desimal
+            $table->float('size', 5, 2); 
             $table->string('region');
             $table->string('avatar');
             $table->timestamps();
