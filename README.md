@@ -32,6 +32,6 @@ Buatlah satu halaman formulir dan halaman hasil isian dengan ketentuan sebagai b
 
 ## Explanation
 
-Link Demo Video : https://youtu.be/ZDJLxI2CXoQ
+Link Demo Video : https://youtu.be/AxDtuSWPEaU
 
 
