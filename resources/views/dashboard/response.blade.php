@@ -25,7 +25,11 @@
                 <td>{{ $formulir->size }}</td>
                 <td>{{ $formulir->region }}</td>
                 <td>
-                    <img src="{{ asset('storage/' . $formulir->picture) }}" alt="{{ $formulir->name }}" width="100">
+                    @if (file_exists(public_path('storage/' . $formulir->picture)))
+                        <img src="{{ asset('storage/' . $formulir->picture) }}" alt="{{ $formulir->name }}" width="100">
+                    @else
+                        <img src="{{ $formulir->picture }}" alt="{{ $formulir->name }}" width="100">
+                    @endif
                 </td>
             </tr>
         @endforeach
